@@ -1,0 +1,26 @@
+{
+  "name": "ensure-nano",
+  "version": "0.0.0",
+  "description": "Ensures the requested database exists in CouchDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --harmony node_modules/jasmine-node/bin/jasmine-node --captureExceptions spec"
+  },
+  "author": {
+    "name": "CubeIO A/S",
+    "email": "devs@cubeio.com",
+    "url": "http://cubeio.com"
+  },
+  "contributors": [
+    {
+      "name": "Kenn Leth Hansen",
+      "email": "klh@cubeio.com"
+    }
+  ],
+  "license": "ISC",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "jasmine-node": "1.14.x"
+  }
+}
