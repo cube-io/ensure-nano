@@ -57,10 +57,12 @@ describe("ensureNano", function() {
         });
 
         it("It inserts the document into the database", function(done) {
+            spyOn(nano.db, "create").andCallThrough();
             couchDb.addDB("test-database");
             var db = ensureNano(nano, "test-database");
 
             db.insert({"test": true}, "test", function(error, body) {
+                expect(nano.db.create).not.toHaveBeenCalled();
                 expect(error).toBeNull();
                 expect(body).toBeDefined();
                 done();
