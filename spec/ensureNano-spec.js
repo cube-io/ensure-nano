@@ -43,9 +43,12 @@ describe("ensureNano", function() {
 
     describe("on first request", function() {
         it("it creates the database and insert the document", function(done) {
-            var db = ensureNano(nano, "test-database");
+            spyOn(nano.db, "create").andCallThrough();
 
+            var db = ensureNano(nano, "test-database");
             db.insert({"test": true}, "test", function(error, body) {
+                expect(nano.db.create).toHaveBeenCalled();
+                expect(nano.db.create.argsForCall[0][0]).toBe("test-database");
                 expect(Object.keys(couchDb.databases)[0]).toBe("test-database");
                 expect(error).toBeNull();
                 expect(body).toBeDefined();
