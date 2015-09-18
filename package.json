@@ -1,0 +1,41 @@
+{
+  "name": "ensure-nano",
+  "version": "0.0.0",
+  "description": "A wrapper around nano that ensures the requested database exists",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --harmony node_modules/jasmine-node/bin/jasmine-node --captureExceptions spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:cube-io/ensure-nano.git"
+  },
+  "keywords": [
+    "nano",
+    "wrapper",
+    "ensure",
+    "couchdb"
+  ],
+  "author": {
+    "name": "CubeIO A/S",
+    "email": "devs@cubeio.com",
+    "url": "http://cubeio.com"
+  },
+  "contributors": [
+    {
+      "name": "Kenn Leth Hansen",
+      "email": "klh@cubeio.com"
+    }
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cube-io/ensure-nano/issues"
+  },
+  "homepage": "https://github.com/cube-io/ensure-nano",
+  "dependencies": {},
+  "devDependencies": {
+    "jasmine-node": "1.14.x",
+    "mock-couch": "^0.1.4",
+    "nano": "^6.1.5"
+  }
+}
