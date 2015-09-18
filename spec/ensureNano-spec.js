@@ -20,7 +20,26 @@ afterEach(function() {
 });
 
 describe("ensureNano", function() {
-    it("can take a Nano-object as an argument", function(done) {});
+    it("can take a nano-object and a database name as an argument and return a nano.db object", function(done) {
+        var database = ensureNano(nano, "test-database");
+
+        function recursiveCheck(originalObject, testObject) {
+            Object.keys(originalObject).forEach(function(method) {
+                expect(testObject[method]).toBeDefined();
+
+                if (typeof testObject[method] == "object") {
+                    recursiveCheck(originalObject[method], testObject[method]);
+                }
+            })
+        }
+
+        recursiveCheck(nano.use("test-database"), database);
+
+        expect(database.config.url).toBe(connectionString);
+        expect(database.config.db).toBe("test-database");
+
+        done();
+    });
 
     describe("on first request", function() {
         it("checks if the database requested exists", function(done) {});
