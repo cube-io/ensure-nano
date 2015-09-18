@@ -20,6 +20,8 @@
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "jasmine-node": "1.14.x"
+    "jasmine-node": "1.14.x",
+    "mock-couch": "^0.1.4",
+    "nano": "^6.1.5"
   }
 }
